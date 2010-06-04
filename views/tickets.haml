@@ -1,0 +1,13 @@
+!!! XML
+%external_stories{:type => 'array'}
+  - @tickets.each do |ticket|
+    %external_story
+      %external_id #{ticket['number'].first['content']}
+      %name #{ticket['title'].first}
+      %description #{ticket['body'].first}
+      %requested_by #{ticket['user'].first}
+      %created_at{:type => 'datetime'} #{ticket['created-at'].first['content']}
+      %story_type bug
+      %estimate{:type => 'integer'}
+
+
