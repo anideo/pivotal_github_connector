@@ -20,6 +20,13 @@ get '/tickets/:repo/:status' do
    haml :tickets
 end
 
+post '/tickets/:repo/:status' do
+   response = RestClient.post "#{GITHUB_API}/issues/list/anideo/#{params[:repo]}/#{params[:status]}", {'login' => USERNAME, 'token' => GITHUB_TOKEN}
+   hash = XmlSimple.xml_in(response.body)
+   @tickets = hash["issue"]
+   haml :tickets
+end
+
 private
 
 def encode_credentials
