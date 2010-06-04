@@ -12,6 +12,7 @@
       - val = 'chore' if str =~ /chore/i
       - val = 'feature' if str =~ /feature/i
       %story_type #{val}
-      %estimate{:type => 'integer'}
+      - ticket['title'].first =~ /([\d])/
+      %estimate{:type => 'integer'} #{$1}
 
 
