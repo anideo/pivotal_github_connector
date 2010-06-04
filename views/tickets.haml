@@ -7,7 +7,7 @@
       %description #{ticket['body'].first}
       %requested_by #{ticket['user'].first}
       %created_at{:type => 'datetime'} #{ticket['created-at'].first['content']}
-      %story_type bug
+      %story_type #{ticket['labels'].first['label'].first['name'].first}
       %estimate{:type => 'integer'}
 
 
