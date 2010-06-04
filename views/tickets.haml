@@ -7,14 +7,11 @@
       %description #{ticket['body'].first}
       %requested_by #{ticket['user'].first}
       %created_at{:type => 'datetime'} #{ticket['created-at'].first['content']}
-      %story_type 
-        - str = ticket['labels'].to_s
-        - if str =~ /chore/i
-          = 'chore'
-        - elsif str =~ /feature/i
-          = 'feature'
-        - else
-          = 'bug'
+      - str = ticket['labels'].to_s
+      - val = 'bug'
+      - val = 'chore' if str =~ /chore/i
+      - val = 'feature' if str =~ /feature/i
+      %story_type #{val}
       %estimate{:type => 'integer'}
 
 
