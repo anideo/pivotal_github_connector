@@ -13,7 +13,7 @@ end
 get '/' do  
 end
 
-post '/tickets/:repo/:status' do
+get '/tickets/:repo/:status' do
    response = RestClient.post "#{GITHUB_API}/issues/list/anideo/#{params[:repo]}/#{params[:status]}", {'login' => USERNAME, 'token' => GITHUB_TOKEN}
    hash = XmlSimple.xml_in(response.body)
    @tickets = hash["issue"]
