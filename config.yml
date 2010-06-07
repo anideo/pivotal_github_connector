@@ -1,0 +1,11 @@
+github_api: http://github.com/api/v2/xml
+github_token: 0b2be480791f5fb45f1adebaffedf301
+github_username: anideo
+github_password: P0l@rb3@r18
+
+pivotal_email: jackie@anideo.com
+pivotal_password: 031806
+
+repos:
+    anideo.com: anideo.com
+    Firefly Health: firefly_health
