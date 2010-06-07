@@ -1,0 +1,10 @@
+github_api: http://github.com/api/v2/xml
+github_token: 
+github_username: 
+github_password: 
+
+pivotal_email: 
+pivotal_password: 
+
+repos:
+    pivotal_proj_name: github_repo_name
