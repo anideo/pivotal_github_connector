@@ -2,17 +2,16 @@
 %external_stories{:type => 'array'}
   - @tickets.each do |ticket|
     %external_story
-      %external_id #{ticket['number'].first['content']}
-      %name #{ticket['title'].first}
-      %description #{ticket['body'].first}
-      %requested_by #{ticket['user'].first}
-      %created_at{:type => 'datetime'} #{ticket['created-at'].first['content']}
-      - str = ticket['labels'].to_s
+      %external_id #{ticket.number}
+      %name #{ticket.title}
+      %description #{ticket.body}
+      %requested_by #{ticket.user}
+      %created_at{:type => 'datetime'} #{ticket.created_at}
       - val = 'bug'
-      - val = 'chore' if str =~ /chore/i
-      - val = 'feature' if str =~ /feature/i
+      - val = 'chore' if ticket.labels.to_s =~ /chore/i
+      - val = 'feature' if ticket.labels.to_s =~ /feature/i
       %story_type #{val}
-      - ticket['title'].first =~ /([\d])/
+      - ticket.title =~ /([\d])/
       %estimate{:type => 'integer'} #{$1}
 
 
