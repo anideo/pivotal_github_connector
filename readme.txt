@@ -1,0 +1,1 @@
+A small Sinatra app that will get open issues from Github into Pivotal Tracker.
