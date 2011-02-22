@@ -18,7 +18,7 @@ class MainTest < Test::Unit::TestCase
   end
 
   def test_with_proper_credentials
-    get '/', {}, {'HTTP_AUTHORIZATION'=> encode_credentials('anideo', 'P0l@rb3@r18')}
+    get '/', {}, {'HTTP_AUTHORIZATION'=> encode_credentials('anideo', 'test_password')}
     assert_equal 200, last_response.status
   end
 
